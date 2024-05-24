@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body,
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.scrollbar-x {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(25, 187, 187, 0.206) transparent;
+  scroll-behavior: smooth;
+}
+:hover.scrollbar-x {
+  scrollbar-color: rgba(25, 187, 187, 0.652) transparent;
+  scroll-behavior: smooth;
+}
+
+.scrollbar-y {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(25, 187, 187, 0.206) transparent;
+  scroll-behavior: smooth;
+}
+:hover.scrollbar-y {
+  scrollbar-color: rgba(25, 187, 187, 0.652) transparent;
+  scroll-behavior: smooth;
+}
+
+/* Tailwind Styles */
+
+.glassmorphism {
+  @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
+}
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.flex-start {
+  @apply flex justify-start items-start;
+}
+
+.flex-end {
+  @apply flex justify-end items-center;
+}
+.flex-around {
+  @apply flex justify-around items-center;
+}
+.flex-between {
+  @apply flex justify-between items-center;
+}
+.bg-gradient {
+  @apply bg-gradient-to-tr from-green-500 via-blue-500 to-orange-600;
+}
+.logo {
+  @apply text-2xl font-extrabold bg-gradient bg-clip-text text-transparent;
+}
+.text-gradient {
+  @apply bg-gradient-to-tr from-green-500 via-cyan-400 to-amber-500 bg-clip-text text-transparent;
+}
+
+.bd {
+  @apply border border-red-500;
+}
+.bgc {
+  background-color: rgb(0, 0, 52);
+}
+.shadow-blk {
+  @apply shadow-lg shadow-black;
+}
+.shadow-cyan {
+  @apply shadow-md shadow-cyan-400;
+}
+.shadow-wht {
+  @apply shadow-md shadow-white;
+}
+.marquee {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  overflow-x: hidden;
+}
+.track {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 15s linear infinite;
+  width: 180%;
+}
+.track:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
