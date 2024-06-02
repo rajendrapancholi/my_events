@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
+import Navbar from '@/components/Navbar';
+import Provider from '@/components/Provider';
 export const metadata: Metadata = {
   title: 'MyEvents',
   description: 'MyEvents.',
@@ -12,7 +14,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Provider>
+          <nav>
+            <Navbar />
+          </nav>
+          {children}
+        </Provider>
+      </body>
     </html>
   );
 }
